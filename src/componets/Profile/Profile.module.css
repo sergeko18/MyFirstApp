@@ -1,0 +1,16 @@
+.content {
+  grid-area: c;
+  background-color: rgb(85, 109, 243);
+
+}
+.img1 img{
+  width: 700px;
+}
+
+.img2 img{
+  width: 200px;
+}
+
+.item {
+  color:chartreuse
+}
