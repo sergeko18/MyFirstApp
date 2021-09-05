@@ -9,8 +9,12 @@ const App = () => {
   return (<div className='app-wrapper'>
     <Header />
     <Navbar />
-    {/* <Content /> */}
+    {/*<div className='app-wrapper-content'>*/}
+    {/*<Content />*/}
+    {/*</div>*/}
+    <div className='app-wrapper-content'>
     <Dialogs />
+    </div>
     
 
   </div>);

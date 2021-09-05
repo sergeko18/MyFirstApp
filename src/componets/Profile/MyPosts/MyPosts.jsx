@@ -2,8 +2,8 @@ import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Posts/Post';
 
-const MyPosts = () => {
-    return <content className={s.content}>
+const MyPosts = (props) => {
+    return <div>
 
     
 
@@ -31,7 +31,7 @@ const MyPosts = () => {
     </div>
 
   
-  </content>}
+  </div>}
 
 
 

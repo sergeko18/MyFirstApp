@@ -1,12 +1,41 @@
 import React from 'react';
 import s from './Post.module.css';
 
+
 const Post = (props) => {
+    return <div>
+        <img src={'https://cdn.iconscout.com/icon/free/png-128/skoda-3441045-2874154.png'} />
+        <div className={s.item}>
+
+    {props.message}
+        </div>
+
+        <div>
+            <span>{props.likesCount}</span>
+        </div>
+
+
+    </div>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const Post = (props) => {
   return (
 
 
     <div className={s.item}>
-      <img src='http://127.0.0.1:5500/goodZone/22.07/DSC_0006.jpg' />
+      <img src='https://cdn.iconscout.com/icon/free/png-128/skoda-3441045-2874154.png' />
           {props.message}
         
       <div><span>Like</span> {props.likesCount} </div>
@@ -19,6 +48,6 @@ const Post = (props) => {
 
 
 
-}
+}*/
 
 export default Post;
