@@ -3,16 +3,7 @@ import s from '../Dialogs.module.css'
 import DialogsItem from "./DialogsItem/DialogsItem";
 
 
-let dialogsData = [
-    {id: 1, name: 'Serge'},
-    {id: 2, name: 'Andrey'},
-    {id: 3, name: 'Katrin'},
-    {id: 4, name: 'Alex'},
-    {id: 5, name: 'Ann'}
-];
 
-let dialogsElements = dialogsData
-    .map (dialog => <DialogsItem name={dialog.name} id={dialog.id}/> );
 
 /*Функция выше трасформирует(мапит) массив элементов в массив других (трансформируемых) элементов*/
 
@@ -25,6 +16,18 @@ let dialogsElements = dialogsData
 ];*/
 
 const DilogsList = (props) => {
+
+    /*let dialogsData = [
+        {id: 1, name: 'Serge'},
+        {id: 2, name: 'Andrey'},
+        {id: 3, name: 'Katrin'},
+        {id: 4, name: 'Alex'},
+        {id: 5, name: 'Ann'}
+    ];*/
+
+    let dialogsElements =
+        props.dialogsData.map (dialog => <DialogsItem name={dialog.name} id={dialog.id}/> );
+
     return (
         <div className={s.dialogsItems}>
             {dialogsElements}

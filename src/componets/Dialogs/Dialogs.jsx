@@ -10,9 +10,9 @@ const Dialogs = (props) => {
 
         <div className={s.dialogs}>
 
-            <DilogsList />
+            <DilogsList dialogsData={props.dialogsData} />
 
-            <Messages/>
+            <Messages messagesData={props.messagesData}/>
 
         </div>
     )

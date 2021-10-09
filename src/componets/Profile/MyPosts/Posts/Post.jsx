@@ -4,10 +4,10 @@ import s from './Post.module.css';
 
 const Post = (props) => {
     return <div>
-        <img src={'https://cdn.iconscout.com/icon/free/png-128/skoda-3441045-2874154.png'} />
+        <img src={'https://cdn.iconscout.com/icon/free/png-128/skoda-3441045-2874154.png'}/>
         <div className={s.item}>
 
-    {props.message}
+            {props.message}
         </div>
 
         <div>
@@ -17,17 +17,6 @@ const Post = (props) => {
 
     </div>
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*const Post = (props) => {
