@@ -1,7 +1,8 @@
 import React from 'react';
 import s from './Dialogs.module.css';
 import Messages from "./Messages/Messages";
-import DilogsList from "./DialogsList/DialogsList";
+import DialogsList from "./DialogsList/DialogsList";
+
 
 
 
@@ -10,7 +11,7 @@ const Dialogs = (props) => {
 
         <div className={s.dialogs}>
 
-            <DilogsList dialogsData={props.dialogsData} />
+            <DialogsList dialogsData={props.dialogsData} />
 
             <Messages messagesData={props.messagesData}/>
 

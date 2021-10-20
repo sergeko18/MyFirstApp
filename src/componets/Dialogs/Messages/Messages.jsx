@@ -12,7 +12,7 @@ import Message from "./Message/MessageText";
 
 
 /*let messagesElements = [
-    <Message text={messagesData[0].massage} id={messagesData[0].id}/>,
+    <Message text={messagesData[0].massage } id={messagesData[0].id}/>,
     <Message text={messagesData[1].massage} id={messagesData[1].id}/>,
     <Message text={messagesData[2].massage} id={messagesData[2].id}/>,
     <Message text={messagesData[3].massage} id={messagesData[3].id}/>,

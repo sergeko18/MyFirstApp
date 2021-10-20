@@ -15,7 +15,7 @@ import DialogsItem from "./DialogsItem/DialogsItem";
     <DialogsItem name={dilogsData[4].name} id={dilogsData[4].id}/>
 ];*/
 
-const DilogsList = (props) => {
+const DialogsList = (props) => {
 
     /*let dialogsData = [
         {id: 1, name: 'Serge'},
@@ -35,4 +35,4 @@ const DilogsList = (props) => {
 
     )
 }
-export default DilogsList;
+export default DialogsList;
