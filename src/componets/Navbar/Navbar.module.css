@@ -1,16 +1,12 @@
-.navbar {
+.navbarList {
     grid-area: n;
     background-color: gray;
     padding: 70px;
 
-}
-
-.item a {
-    color: white;
-    text-decoration: none;
+    display: grid;
+    grid-gap: 10px;
 
 }
 
-.item a.itemActive {
-    color: limegreen;
-}
+
+
