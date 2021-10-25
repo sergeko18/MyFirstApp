@@ -9,12 +9,12 @@ const Navbar = () => {
     return (
         <navbar className = {s.navbarList}>
 
-            <div>
+            <div className = 'nvl'>
                 <NavbarList />
             </div>
 
-            <div>
-                <Friends />
+            <div className ='Frds'>
+                <Friends  />
             </div>
         </navbar>
 
