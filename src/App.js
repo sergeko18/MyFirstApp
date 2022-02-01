@@ -4,16 +4,16 @@ import Dialogs from './componets/Dialogs/Dialogs';
 import Header from './componets/Header/Header';
 import Navbar from './componets/Navbar/Navbar';
 import Profile from './componets/Profile/Profile';
-import {BrowserRouter, Route} from "react-router-dom";
 import News from "./componets/News/News";
 import Music from "./componets/Music/Music";
 import Settings from "./componets/Settings/Settings";
 import {updateNewPostText} from "./Redux/state";
+import {Route} from 'react-router-dom';
 
 
 const App = (props) => {
     return (
-        <BrowserRouter>
+
 
             <div className='app-wrapper'>
                 <Header/>
@@ -37,7 +37,7 @@ const App = (props) => {
                 <Route path='/settings' render={() => <Settings/>}/>
 
             </div>
-        </BrowserRouter>
+
 
     );
 }
