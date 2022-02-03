@@ -7,7 +7,6 @@ import Profile from './componets/Profile/Profile';
 import News from "./componets/News/News";
 import Music from "./componets/Music/Music";
 import Settings from "./componets/Settings/Settings";
-import {updateNewPostText} from "./Redux/state";
 import {Route} from 'react-router-dom';
 
 
