@@ -1,6 +1,5 @@
 import React from 'react';
 import s from './Navbar.module.css';
-import {NavLink} from "react-router-dom";
 import NavbarList from "./NavbarList/NavbarList";
 import Friends from "./FriendsList/Friends";
 
