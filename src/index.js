@@ -3,8 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import state, {subscribe} from './Redux/state';
-import {addPost, updateNewPostText} from './Redux/state';
+import state from './Redux/state';
+import {addPost, updateNewPostText, subscriber} from './Redux/state';
 import {BrowserRouter} from  "react-router-dom"
 
 
