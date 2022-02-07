@@ -1,15 +1,19 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
+const SEND_MESSAGE = 'SEND_MESSAGE';
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+
+debugger;
 let store = {
     _state: {
         messagesPage: {
             messagesData: [
-                {id: 1, massage: 'Hello! How are you?'},
-                {id: 2, massage: 'What you gonna do?'},
-                {id: 3, massage: 'Yo'},
-                {id: 4, massage: 'Yo'},
-                {id: 5, massage: 'Yo'}
+                {id: 1, message: 'Hello! How are you?'},
+                {id: 2, message: 'What you gonna do?'},
+                {id: 3, message: 'Yo'},
+                {id: 4, message: 'Yo'},
+                {id: 5, message: 'Yo'}
             ],
             dialogsData: [
                 {id: 1, name: 'Serge'},
@@ -19,6 +23,7 @@ let store = {
                 {id: 5, name: 'Ann'}
 
             ],
+            newMessageBody: "555777"
 
         },
 
@@ -57,10 +62,23 @@ let store = {
         } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state);
+        } else if (action.type === SEND_MESSAGE) {
+            let floopy = {
+                id: 7,
+                message: this._state.messagesPage.newMessageBody,
+            };
+            this._state.messagesPage.messagesData.push(floopy);
+            this._state.messagesPage.newMessageBody = '';
+            this._callSubscriber(this._state);
+
+        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.messagesPage.newMessageBody = action.body;
+            this._callSubscriber(this._state)
         }
 
 
-    },
+    }
+    ,
 
 
 };
@@ -68,10 +86,18 @@ let store = {
 export const addPostActionCreator = () => {
     return {type: ADD_POST}
 };
-
 export const updateNewPostTextActionCreator = (text) => (
     {type: UPDATE_NEW_POST_TEXT, newText: text}
 );
+
+
+export const updateNewMessageBodyCreator = (body) => (
+    {type: UPDATE_NEW_MESSAGE_BODY, body: body}
+);
+export const sendMessageCreator = () => (
+    {type: SEND_MESSAGE}
+);
+
 
 export default store;
 window.store = store;

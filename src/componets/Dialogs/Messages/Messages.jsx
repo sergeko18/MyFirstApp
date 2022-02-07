@@ -3,10 +3,11 @@ import Message from "./Message/MessageText";
 import MessageButton from "./MessageButton/MessageButton";
 
 
+
 const Messages = (props) => {
 
     let messagesElements =
-        props.messagesData.map(messageEl => <Message text={messageEl.massage} id={messageEl.id}/>);
+        props.messagesPage.messagesData.map(messageEl => <Message text={messageEl.message} id={messageEl.id}/>);
 
     return (
         <div>
@@ -15,7 +16,7 @@ const Messages = (props) => {
                 {messagesElements}
             </div>
 
-            <MessageButton/>
+            <MessageButton store={props.store} dispatch= {props.dispatch} state={props.state}/>
         </div>
 
 

@@ -2,18 +2,20 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import Messages from "./Messages/Messages";
 import DialogsList from "./DialogsList/DialogsList";
+import store from "../../Redux/state";
 
 
 
 
 const Dialogs = (props) => {
+
     return (
 
         <div className={s.dialogs}>
 
-            <DialogsList dialogsData={props.dialogsData} />
+            <DialogsList store={props.store} dialogsData={props.messagePage.dialogsData} dispatch={props.dispatch}/>
 
-            <Messages messagesData={props.messagesData}/>
+            <Messages store={props.store} messagesPage={props.messagePage} dispatch={props.dispatch} state={props.state} />
 
         </div>
     )

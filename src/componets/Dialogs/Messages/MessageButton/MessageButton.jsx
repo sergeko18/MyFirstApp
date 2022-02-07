@@ -1,21 +1,35 @@
 import React from 'react';
+import {sendMessageCreator, updateNewMessageBodyCreator} from "../../../../Redux/state";
 
 
-const MessageButton = () => {
+const MessageButton = (props) => {
 
-    let newMessage = React.createRef();
+    let state = props.store.getState().messagesPage;
 
-    let addMessage = () => {
-        let text = newMessage.current.value;
-        alert(text);
+    let newMessageBody = state.newMessageBody;
+
+
+    let onSendMessageClick = () => {
+        props.dispatch(sendMessageCreator())
     }
+
+    let onNewMessageChange = (e) => {
+        let body = e.target.value;
+        props.dispatch(updateNewMessageBodyCreator(body))
+    };
+
+
     return (
         <div>
             <div>
-                <textarea ref={newMessage}></textarea>
+                <textarea value={newMessageBody}
+                          onChange={onNewMessageChange}>
+
+
+                </textarea>
             </div>
             <div>
-                <button onClick={addMessage}>Add post</button>
+                <button onClick={onSendMessageClick}>Send</button>
                 <button>Remove</button>
             </div>
         </div>
