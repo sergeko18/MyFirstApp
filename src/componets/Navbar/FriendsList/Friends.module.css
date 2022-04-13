@@ -1,8 +1,7 @@
 .item {
-    color: cyan;
+    color: white;
     text-decoration: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: table-cell;
 
 }
 
@@ -11,7 +10,5 @@
     height: 50px;
 }
 
-.frdswrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
+
+
