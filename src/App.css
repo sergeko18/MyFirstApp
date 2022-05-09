@@ -10,10 +10,4 @@ grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
 }
-.app-wrapper-content {
-  grid-area: c;
-  background-color: lightgray;
-  background-image: url("https://skodavisualizer.blob.core.windows.net/skoda3d/kodiaq.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
+
