@@ -23,7 +23,6 @@ let store = {
             newMessageBody: ""
 
         },
-
         profilePage: {
             posts: [
                 {id: 1, message: 'Hi, how are you?', likesCount: 17},
@@ -32,7 +31,6 @@ let store = {
             newPostText: 'yoyoyoyoyoy'
 
         },
-
         sidebar: { }
     },
     _callSubscriber() {
