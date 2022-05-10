@@ -1,5 +1,5 @@
 import React from 'react';
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../../../Redux/massages-reducer";
+import {sendMessageCreator, updateNewMessageBodyCreator} from "../../../../Redux/messages-reducer";
 
 
 const MessageButton = (props) => {

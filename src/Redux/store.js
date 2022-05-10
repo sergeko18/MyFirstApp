@@ -1,5 +1,5 @@
 import profileReducer from "./profile-reducer";
-import massagesReducer from "./massages-reducer";
+import massagesReducer from "./messages-reducer";
 import sidebarReducer from "./sidebar-reducer";
 debugger;
 let store = {
