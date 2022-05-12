@@ -13,7 +13,7 @@ const DialogsList = (props) => {
 
 
     let dialogsElements =
-        props.dialogsData.map (dialog => <DialogsItem name={dialog.name} id={dialog.id}/> );
+        props.store.getState().messagesPage.dialogsData.map (dialog => <DialogsItem name={dialog.name} id={dialog.id}/> );
 
     return (
         <div className={s.dialogsItems}>

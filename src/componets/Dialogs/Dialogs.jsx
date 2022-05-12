@@ -13,14 +13,9 @@ const Dialogs = (props) => {
 
         <div className={s.dialogs}>
 
-            <DialogsList store={props.store}
-                         dialogsData={props.messagePage.dialogsData}
-                         dispatch={props.dispatch}/>
+            <DialogsList store={props.store} />
 
-            <Messages store={props.store}
-                      messagesPage={props.messagePage}
-                      dispatch={props.dispatch}
-                      state={props.state} />
+            <Messages store={props.store} />
 
         </div>
     )

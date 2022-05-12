@@ -1,21 +1,18 @@
 import React from 'react';
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../../../Redux/messages-reducer";
+
 
 
 const MessageButton = (props) => {
 
-    let state = props.store.getState().messagesPage;
-
-    let newMessageBody = state.newMessageBody;
-
+    let newMessageBody = props.newMessageBody;
 
     let onSendMessageClick = () => {
-        props.dispatch(sendMessageCreator())
+        props.sendMessage();
     }
 
     let onNewMessageChange = (e) => {
         let body = e.target.value;
-        props.dispatch(updateNewMessageBodyCreator(body))
+        props.updateNewMessage(body);
     };
 
 
