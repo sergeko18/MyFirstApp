@@ -10,7 +10,6 @@ import Settings from "./componets/Settings/Settings";
 import {Route} from 'react-router-dom';
 
 
-
 const App = (props) => {
     return (
 
@@ -20,10 +19,7 @@ const App = (props) => {
             <Navbar/>
 
             <Route path='/profile'
-                   render={() => <Profile
-                       profilePage={props.state.profilePage}
-                       dispatch={props.dispatch}
-                   />}/>
+                   render={() => <Profile store={props.store}/>}/>
 
 
             <Route path='/dialogs'
