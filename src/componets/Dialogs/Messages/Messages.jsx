@@ -4,9 +4,9 @@ import MessageButtonContainer from "./MessageButton/MessageButtonContainer";
 
 
 const Messages = (props) => {
-
+debugger;
     let messagesElements =
-        props.store.getState().messagesPage.messagesData.map(messageEl => <Message text={messageEl.message} id={messageEl.id}/>);
+        props.messagesData.map(messageEl => <Message text={messageEl.message} id={messageEl.id}/>);
 
     return (
         <div>

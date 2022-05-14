@@ -10,7 +10,7 @@ import Settings from "./componets/Settings/Settings";
 import {Route} from 'react-router-dom';
 
 
-const App = (props) => {
+const App = () => {
     return (
 
 
@@ -19,11 +19,11 @@ const App = (props) => {
             <Navbar/>
 
             <Route path='/profile'
-                   render={() => <Profile store={props.store}/>}/>
+                   render={() => <Profile/>}/>
 
 
             <Route path='/dialogs'
-                   render={() => <Dialogs store={props.store}/>}/>
+                   render={() => <Dialogs/>}/>
             <Route path='/news' render={() => <News/>}/>
             <Route path='/music' render={() => <Music/>}/>
             <Route path='/settings' render={() => <Settings/>}/>
