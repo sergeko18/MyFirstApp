@@ -4,7 +4,7 @@ import MessageButtonContainer from "./MessageButton/MessageButtonContainer";
 
 
 const Messages = (props) => {
-debugger;
+
     let messagesElements =
         props.messagesData.map(messageEl => <Message text={messageEl.message} id={messageEl.id}/>);
 
@@ -15,7 +15,7 @@ debugger;
                 {messagesElements}
             </div>
 
-            <MessageButtonContainer store={props.store}/>
+            <MessageButtonContainer />
         </div>
 
 

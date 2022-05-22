@@ -23,18 +23,21 @@ let initialState = {
 
 const massagesReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SEND_MESSAGE:
+        case SEND_MESSAGE: {
             let floopy = {
                 id: 7,
                 message: state.newMessageBody,
             };
-            state.messagesData.push(floopy);
-            state.newMessageBody = '';
-            return state;
-
-        case UPDATE_NEW_MESSAGE_BODY:
-            state.newMessageBody = action.body;
-            return state;
+            return {
+                ...state,
+                messagesData: [...state.messagesData, floopy],
+                newMessageBody:''
+            };
+        }
+        case UPDATE_NEW_MESSAGE_BODY: {
+            return {...state,
+            newMessageBody: action.newBody}
+        }
 
         default:
             return state;
@@ -42,7 +45,7 @@ const massagesReducer = (state = initialState, action) => {
 }
 
 export const updateNewMessageBodyCreator = (body) => (
-    {type: UPDATE_NEW_MESSAGE_BODY, body: body}
+    {type: UPDATE_NEW_MESSAGE_BODY, newBody: body}
 );
 export const sendMessageCreator = () => (
     {type: SEND_MESSAGE}

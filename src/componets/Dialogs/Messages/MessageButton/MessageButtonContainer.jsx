@@ -1,26 +1,26 @@
 import React from 'react';
 import {sendMessageCreator, updateNewMessageBodyCreator} from "../../../../Redux/messages-reducer";
-
 import MessageButton from "./MessageButton";
+import {connect} from "react-redux";
 
-
-const MessageButtonContainer = (props) => {
-
-    let state = props.store.getState().messagesPage;
-
-    let newMessageBody = state.newMessageBody;
-
-
-    let onSendMessageClick = () => {
-        props.store.dispatch(sendMessageCreator())
+let mapStateToProps = (state) => {
+    return {
+        newMessageBody: state.messagesPage.newMessageBody,
     }
+}
 
-    let onNewMessageChange = (body) => {
-        props.store.dispatch(updateNewMessageBodyCreator(body))
-    };
+let mapDispatchToProps = (dispatch) => {
+    return {
+        updateNewMessage: (body) => {
+            dispatch(updateNewMessageBodyCreator(body));
+        },
 
+        sendMessage: () => {
+            dispatch(sendMessageCreator());
+        }
 
-    return ( <MessageButton updateNewMessage={onNewMessageChange} sendMessage={onSendMessageClick} newMessageBody={newMessageBody}/>)
-};
+    }
+}
+const MessageButtonContainer = connect(mapStateToProps, mapDispatchToProps)(MessageButton)
 
 export default MessageButtonContainer;

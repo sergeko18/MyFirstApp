@@ -4,7 +4,6 @@ import React from 'react';
 
 const MessageButton = (props) => {
 
-    let newMessageBody = props.newMessageBody;
 
     let onSendMessageClick = () => {
         props.sendMessage();
@@ -19,7 +18,7 @@ const MessageButton = (props) => {
     return (
         <div>
             <div>
-                <textarea value={newMessageBody}
+                <textarea value={props.newMessageBody}
                           onChange={onNewMessageChange}>
 
 

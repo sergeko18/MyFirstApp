@@ -1,21 +1,18 @@
 import React from 'react';
 import DialogsList from "./DialogsList";
-import StoreContext from "../../../StoreContext";
+import {connect} from "react-redux";
 
 
 /*Функция выше трасформирует(мапит) массив элементов в массив других (трансформируемых) элементов*/
 
 
-const DialogsListContainer = () => {
-    return (
-        <StoreContext.Consumer>
-            {(store) => {
-                return (
-                    <DialogsList dialogsData={store.getState().messagesPage.dialogsData}/>
 
-                )
-            }
-            }
-        </StoreContext.Consumer>)
+let mapStateToProps = (state) =>{
+    return {
+        dialogsData: state.messagesPage.dialogsData
+    }
 }
+
+const DialogsListContainer = connect(mapStateToProps)(DialogsList)
+
 export default DialogsListContainer;
