@@ -6,7 +6,7 @@ import Friends from "./FriendsList/Friends";
 
 const Navbar = () => {
     return (
-        <navbar className = {s.navbarList}>
+        <div className = {s.navbarList}>
 
             <div className = 'nvl'>
                 <NavbarList />
@@ -15,7 +15,7 @@ const Navbar = () => {
             <div className ='Frds'>
                 <Friends  />
             </div>
-        </navbar>
+        </div>
 
     )
 }

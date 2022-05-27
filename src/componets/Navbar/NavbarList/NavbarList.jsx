@@ -5,7 +5,7 @@ import s from './NavbarList.module.css'
 
 const NavbarList = () => {
     return (
-        <navbarList className={s.navbar}>
+        <div className={s.navbar}>
 
             <div className={s.item}>
                 <NavLink to="/profile" activeClassName={s.itemActive}>Profile</NavLink>
@@ -31,7 +31,7 @@ const NavbarList = () => {
                 <NavLink to="/users" activeClassName={s.itemActive}>Users</NavLink>
             </div>
 
-        </navbarList>
+        </div>
     )
 }
 

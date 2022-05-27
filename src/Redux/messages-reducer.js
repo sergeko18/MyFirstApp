@@ -43,7 +43,6 @@ const massagesReducer = (state = initialState, action) => {
             return state;
     }
 }
-
 export const updateNewMessageBodyCreator = (body) => (
     {type: UPDATE_NEW_MESSAGE_BODY, newBody: body}
 );
