@@ -20,20 +20,12 @@ export const usersAPI = {
         )
     },
 
-    /*deleteUsers(userId) {
-        return (
-            instance.delete(`${userId}`,)
-                .then(response => {
-                    return response.data;
-                })
-        )
-    },
+    deleteUsers(userId) {
+        return instance.delete(`follow/${userId}`);
+        },
     postUsers(userId) {
         return (
-            instance.post(`${userId}`, {})
-                .then(response => {
-                    return response.data;
-                })
+            instance.post(`follow/${userId}`)
         )
-    }*/
+    }
 }
