@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Posts/Post';
+import PostReduxForm from "./PostForm/PostForm";
 
 
 const MyPosts = (props) => {
@@ -8,19 +9,9 @@ const MyPosts = (props) => {
     let PostsElements =
         props.posts.map(p => <Post message={p.message} id={p.id} likesCount={p.likesCount}/>);
 
-    let newPostElement = React.createRef();
-
-
-
-    let onAddPost = () => {
-        props.addPost();
+    let addPost = (value) =>{
+        props.addPost(value.newPostElement)
     }
-
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        props.updateNewPostText(text);
-
-    };
 
 
     return <div>
@@ -28,17 +19,12 @@ const MyPosts = (props) => {
             My posts
             <div>
                 <div>
-                    <textarea onChange={onPostChange}
-                              ref={newPostElement}
-                              value={props.newPostText}/>
+                    <PostReduxForm onSubmit={addPost}/>
                 </div>
+
                 <div>
-                    <button onClick={onAddPost}>Add post</button>
-                    <button>Remove</button>
+                    {PostsElements}
                 </div>
-
-                {PostsElements}
-
             </div>
         </div>
     </div>

@@ -29,7 +29,7 @@ const LoginReduxForm = reduxForm({ // <----- THIS IS THE IMPORTANT PART!
 
 const Login = (props) => {
     const onSubmit = (formData) => {
-
+            console.log(formData);
     }
 
     return (

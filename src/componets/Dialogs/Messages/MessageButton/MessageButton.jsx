@@ -1,35 +1,41 @@
 import React from 'react';
+import {Field, reduxForm} from "redux-form";
 
 
 
 const MessageButton = (props) => {
-
-
-    let onSendMessageClick = () => {
-        props.sendMessage();
-    }
-
-    let onNewMessageChange = (e) => {
-        let body = e.target.value;
-        props.updateNewMessage(body);
+    let addNewMessage = (values) => {
+        props.sendMessage(values.newMessageBody);
     };
 
 
     return (
-        <div>
-            <div>
-                <textarea value={props.newMessageBody}
-                          onChange={onNewMessageChange}>
 
-
-                </textarea>
-            </div>
             <div>
-                <button onClick={onSendMessageClick}>Send</button>
-                <button>Remove</button>
+                <AddMessageReduxForm onSubmit={addNewMessage} />
             </div>
-        </div>
+
     )
 }
+
+const AddMessageForm = (props) => {
+    return(
+        <form onSubmit={props.handleSubmit}>
+            <div>
+                <Field component={"textarea"} name={"newMessageBody"} placeholder={"Enter your message"}/>
+            </div>
+            <div>
+                <button>Send</button>
+                <button>Remove</button>
+            </div>
+        </form>
+    )
+}
+
+const AddMessageReduxForm = reduxForm({ // <----- THIS IS THE IMPORTANT PART!
+    form: 'dialogAddMessageReduxForm',                            // a unique name for this form
+    //fields: ['login', 'password', 'rememberMe'] // all the fields in your form
+})(AddMessageForm);
+
 
 export default MessageButton;

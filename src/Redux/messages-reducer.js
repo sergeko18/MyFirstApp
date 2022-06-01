@@ -1,5 +1,4 @@
 const SEND_MESSAGE = 'SEND_MESSAGE';
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
 
 let initialState = {
     messagesData: [
@@ -16,38 +15,28 @@ let initialState = {
         {id: 4, name: 'Alex'},
         {id: 5, name: 'Ann'}
 
-    ],
-    newMessageBody: ""
-
+    ]
 };
 
 const massagesReducer = (state = initialState, action) => {
     switch (action.type) {
         case SEND_MESSAGE: {
-            let floopy = {
-                id: 7,
-                message: state.newMessageBody,
-            };
+            let floopy = action.newMessageBody;
             return {
                 ...state,
-                messagesData: [...state.messagesData, floopy],
-                newMessageBody:''
+                messagesData: [...state.messagesData, {id: 7, message: floopy}],
+
             };
         }
-        case UPDATE_NEW_MESSAGE_BODY: {
-            return {...state,
-            newMessageBody: action.newBody}
-        }
+
 
         default:
             return state;
     }
 }
-export const updateNewMessageBodyCreator = (body) => (
-    {type: UPDATE_NEW_MESSAGE_BODY, newBody: body}
-);
-export const sendMessageCreator = () => (
-    {type: SEND_MESSAGE}
+
+export const sendMessageCreator = (newMessageBody) => (
+    {type: SEND_MESSAGE, newMessageBody}
 );
 
 export default massagesReducer;
