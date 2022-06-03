@@ -1,11 +1,12 @@
 import React from 'react';
 
 import s from './Friends.module.css';
-import {NavLink, withRouter} from "react-router-dom";
+import {Link, NavLink, Route, withRouter} from "react-router-dom";
 
 const Friends = () => {
     return (
-        <div className={s.frdswrapper}>
+        <Route>
+            <div className={s.frdswrapper}>
 
             <div className={s.item}>
                 <img src={'https://cdn.iconscout.com/icon/free/png-128/skoda-3441045-2874154.png'}/>
@@ -18,14 +19,15 @@ const Friends = () => {
             </div>
 
             <div className={s.item}>
-                <NavLink to={'/profile/' + 2}>
+                <Link to={'/profile/' + 2}>
                     <img src={'https://cdn.iconscout.com/icon/free/png-128/skoda-3441045-2874154.png'}/>
                     Dimon
-                </NavLink>
+                </Link>
             </div>
 
 
         </div>
+        </Route>
 
     )
 
