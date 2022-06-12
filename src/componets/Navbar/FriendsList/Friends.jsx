@@ -1,7 +1,7 @@
 import React from 'react';
 
 import s from './Friends.module.css';
-import {Link, NavLink, Route, withRouter} from "react-router-dom";
+import {NavLink, Route, withRouter} from "react-router-dom";
 
 const Friends = () => {
     return (
@@ -19,10 +19,10 @@ const Friends = () => {
             </div>
 
             <div className={s.item}>
-                <Link to={'/profile/' + 2}>
+                <NavLink to={`/profile/2`}>
                     <img src={'https://cdn.iconscout.com/icon/free/png-128/skoda-3441045-2874154.png'}/>
                     Dimon
-                </Link>
+                </NavLink>
             </div>
 
 
