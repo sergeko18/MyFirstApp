@@ -11,3 +11,11 @@
 .formControl.error span{
     color: red;
 }
+
+.formSummaryError {
+    border: red 3px solid;
+    padding: 5px;
+    color: red;
+    max-width: 160px;
+    text-align: center;
+}
