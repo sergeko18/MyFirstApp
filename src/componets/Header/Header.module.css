@@ -12,6 +12,7 @@
 
 .loginBlock {
   float: right;
+  padding: 5px 50px;
 }
 .loginBlock a {
   color: white;
@@ -21,4 +22,10 @@
 
 .loginBlock a.itemActive {
   color: limegreen;
+}
+
+.loginName{
+  font-family: Arial;
+  font-size: 20px;
+
 }

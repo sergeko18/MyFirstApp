@@ -2,9 +2,9 @@ import React from "react";
 import styles from "./FormsControls.module.css";
 
 const FormControl = ({input, meta, ...props}) => {
-    const hasError = meta.error && meta.touched;
+    const hasError = meta.error ? meta.touched: undefined;
     return(
-        <div className={hasError && styles.formControl + " " + styles.error}>
+        <div className={hasError ? styles.formControl + " " + styles.error: undefined}>
             <div>
                 {props.children}
             </div>

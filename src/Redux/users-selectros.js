@@ -1,23 +1,33 @@
-export let UsersSelector = (state) => {
+import {createSelector} from "reselect";
+
+const UsersSelector = (state) => {
     return state.usersPage.users ;
 }
 
-export let PageSizeSelector = (state) => {
+export const UsersSuperSelector = createSelector(UsersSelector, (users) => {
+    return users;
+
+})
+
+
+
+
+export const PageSizeSelector = (state) => {
     return state.usersPage.pageSize ;
 }
 
-export let totalUsersCountSelector = (state) => {
+export const totalUsersCountSelector = (state) => {
     return state.usersPage.totalUsersCount ;
 }
 
-export let currentPageSelector = (state) => {
+export const currentPageSelector = (state) => {
     return state.usersPage.currentPage ;
 }
 
-export let isFetchingSelector = (state) => {
+export const isFetchingSelector = (state) => {
     return state.usersPage.isFetching ;
 }
 
-export let followingInProgressSelector = (state) => {
+export const followingInProgressSelector = (state) => {
     return state.usersPage.followingInProgress ;
 }
