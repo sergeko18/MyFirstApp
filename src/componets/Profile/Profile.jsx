@@ -1,20 +1,30 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import s from './Profile.module.css';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 
-const Profile = (props) => {
+class Profile extends PureComponent {
 
-    return (
-        <div className={s.content}>
+    /*shouldComponentUpdate(nextProps, nextState) {
+        return nextProps !== this.props || nextState !== this.state
+    }*/
 
-            <ProfileInfo profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
-            <MyPostsContainer/>
+    render() {
+
+        console.log("profile")
+
+        return (
+            <div className={s.content}>
+
+                <ProfileInfo profile={this.props.profile} status={this.props.status}
+                             updateStatus={this.props.updateStatus}/>
+                <MyPostsContainer/>
 
 
-        </div>
-    )
+            </div>
+        )
+    }
 }
 
 
