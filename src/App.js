@@ -33,7 +33,7 @@ class App extends Component {
                 <HeaderContainer/>
                 <Navbar/>
 
-                <Route path='/profile/:userId?'
+                <Route  path='/profile/:userId?'
                        render={() => <ProfileContainer/>}/>
 
 
