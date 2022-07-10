@@ -12,7 +12,6 @@ class Profile extends PureComponent {
 
     render() {
 
-        console.log("profile")
 
         return (
             <div className={s.content}>
