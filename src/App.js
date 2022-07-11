@@ -4,7 +4,7 @@ import Navbar from './componets/Navbar/Navbar';
 import News from "./componets/News/News";
 import Music from "./componets/Music/Music";
 import Settings from "./componets/Settings/Settings";
-import {BrowserRouter, Route, withRouter} from 'react-router-dom';
+import {HashRouter, BrowserRouter, Route, withRouter} from 'react-router-dom';
 import UsersContainer from "./componets/Users/UsersContainer";
 //import ProfileContainer from "./componets/Profile/ProfileContainer";
 import HeaderContainer from "./componets/Header/HeaderContainer";
@@ -75,7 +75,7 @@ const AppContainer = compose(
 
 const MainApp = (props) => {
     return (
-        <BrowserRouter>
+        <HashRouter>
 
             <Provider store={store}>
 
@@ -83,7 +83,7 @@ const MainApp = (props) => {
 
             </Provider>
 
-        </BrowserRouter>
+        </HashRouter>
     )
 };
 
