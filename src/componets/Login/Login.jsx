@@ -8,7 +8,7 @@ import {Redirect} from "react-router-dom";
 import s from "../common/FormsControls/FormsControls.module.css"
 
 
-const maxLength50 = maxLengthCreator(50);
+export const maxLength50 = maxLengthCreator(50);
 
 const LoginForm = (props) => {
     return (

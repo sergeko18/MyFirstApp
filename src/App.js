@@ -1,4 +1,4 @@
-import React, {Component, Suspense} from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import Navbar from './componets/Navbar/Navbar';
 import News from "./componets/News/News";
@@ -6,10 +6,8 @@ import Music from "./componets/Music/Music";
 import Settings from "./componets/Settings/Settings";
 import {HashRouter, BrowserRouter, Route, withRouter} from 'react-router-dom';
 import UsersContainer from "./componets/Users/UsersContainer";
-//import ProfileContainer from "./componets/Profile/ProfileContainer";
 import HeaderContainer from "./componets/Header/HeaderContainer";
 import Login from "./componets/Login/Login";
-//import DialogsContainer from "./componets/Dialogs/DialogsContainer";
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./Redux/app-reducer";
