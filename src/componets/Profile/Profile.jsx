@@ -16,8 +16,12 @@ class Profile extends PureComponent {
         return (
             <div className={s.content}>
 
-                <ProfileInfo profile={this.props.profile} status={this.props.status}
-                             updateStatus={this.props.updateStatus}/>
+                <ProfileInfo profile={this.props.profile}
+                             status={this.props.status}
+                             updateStatus={this.props.updateStatus}
+                             isOwner={this.props.isOwner}
+                             savePhoto={this.props.savePhoto}
+                />
                 <MyPostsContainer/>
 
 

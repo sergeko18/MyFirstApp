@@ -2,31 +2,42 @@ import React from 'react';
 import s from './ProfileInfo.module.css';
 import Preloader from '../../common/Preloader/Preloader';
 import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
+import userImg from "../../../assets/images/user.png"
 
 
 
-const ProfileInfo = ({profile, status, updateStatus}) => {
+const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
     if(!profile){
         return <Preloader />
     }
+
+    const onMainPhotoSelected = (e) => {
+        if (e.target.files.length) {
+            savePhoto(e.target.files[0]);
+        }
+    }
+
     return (
         <div>
-           {/* <div className={s.img1}>
 
-                <img src='https://stimg.cardekho.com/images/car-images/930x620/Skoda/Superb/6764/1590559103723/227_Steel-Grey_454642.jpg?tr=w-420'/>
-
-
-            </div>*/}
-
-            <div className={s.img2}>
-                <img src='https://cdn.iconscout.com/icon/free/png-128/skoda-3441045-2874154.png'/>
-            </div>
 
             <div className={s.discriptionBlock}>
-                <img src={profile.photos.large} alt=""/>
-                <ProfileStatusWithHooks status={status} updateStatus={updateStatus}  />
-                Ava + discription
+
+                <div className={s.img2}>
+                    {<img src={profile.photos.large || userImg} alt=""/> }
+                </div>
+                
+                <div>
+                    {isOwner && <input type="file" onChange={onMainPhotoSelected}/>}
+                </div>
+
+                <div>
+                    <ProfileStatusWithHooks status={status} updateStatus={updateStatus}  />
+                </div>
+
             </div>
+
+
         </div>
 
     )
