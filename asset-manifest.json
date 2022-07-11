@@ -1,30 +1,30 @@
 {
   "files": {
     "main.css": "/MyFirstApp/static/css/main.76c3c970.chunk.css",
-    "main.js": "/MyFirstApp/static/js/main.ec7cd106.chunk.js",
-    "main.js.map": "/MyFirstApp/static/js/main.ec7cd106.chunk.js.map",
-    "runtime-main.js": "/MyFirstApp/static/js/runtime-main.8cf4253d.js",
-    "runtime-main.js.map": "/MyFirstApp/static/js/runtime-main.8cf4253d.js.map",
-    "static/js/2.93723312.chunk.js": "/MyFirstApp/static/js/2.93723312.chunk.js",
-    "static/js/2.93723312.chunk.js.map": "/MyFirstApp/static/js/2.93723312.chunk.js.map",
+    "main.js": "/MyFirstApp/static/js/main.8c8c3866.chunk.js",
+    "main.js.map": "/MyFirstApp/static/js/main.8c8c3866.chunk.js.map",
+    "runtime-main.js": "/MyFirstApp/static/js/runtime-main.572d7a2d.js",
+    "runtime-main.js.map": "/MyFirstApp/static/js/runtime-main.572d7a2d.js.map",
+    "static/js/2.21ae2c2f.chunk.js": "/MyFirstApp/static/js/2.21ae2c2f.chunk.js",
+    "static/js/2.21ae2c2f.chunk.js.map": "/MyFirstApp/static/js/2.21ae2c2f.chunk.js.map",
     "static/css/3.c7cc044d.chunk.css": "/MyFirstApp/static/css/3.c7cc044d.chunk.css",
     "static/js/3.ae87be09.chunk.js": "/MyFirstApp/static/js/3.ae87be09.chunk.js",
     "static/js/3.ae87be09.chunk.js.map": "/MyFirstApp/static/js/3.ae87be09.chunk.js.map",
     "static/css/4.ff4aaf9d.chunk.css": "/MyFirstApp/static/css/4.ff4aaf9d.chunk.css",
-    "static/js/4.9c5c15c3.chunk.js": "/MyFirstApp/static/js/4.9c5c15c3.chunk.js",
-    "static/js/4.9c5c15c3.chunk.js.map": "/MyFirstApp/static/js/4.9c5c15c3.chunk.js.map",
+    "static/js/4.164da848.chunk.js": "/MyFirstApp/static/js/4.164da848.chunk.js",
+    "static/js/4.164da848.chunk.js.map": "/MyFirstApp/static/js/4.164da848.chunk.js.map",
     "index.html": "/MyFirstApp/index.html",
     "static/css/3.c7cc044d.chunk.css.map": "/MyFirstApp/static/css/3.c7cc044d.chunk.css.map",
     "static/css/4.ff4aaf9d.chunk.css.map": "/MyFirstApp/static/css/4.ff4aaf9d.chunk.css.map",
     "static/css/main.76c3c970.chunk.css.map": "/MyFirstApp/static/css/main.76c3c970.chunk.css.map",
-    "static/js/2.93723312.chunk.js.LICENSE.txt": "/MyFirstApp/static/js/2.93723312.chunk.js.LICENSE.txt",
+    "static/js/2.21ae2c2f.chunk.js.LICENSE.txt": "/MyFirstApp/static/js/2.21ae2c2f.chunk.js.LICENSE.txt",
     "static/media/Iphone-spinner.d3fbaf2b.gif": "/MyFirstApp/static/media/Iphone-spinner.d3fbaf2b.gif",
     "static/media/user.f9962a9a.png": "/MyFirstApp/static/media/user.f9962a9a.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.8cf4253d.js",
-    "static/js/2.93723312.chunk.js",
+    "static/js/runtime-main.572d7a2d.js",
+    "static/js/2.21ae2c2f.chunk.js",
     "static/css/main.76c3c970.chunk.css",
-    "static/js/main.ec7cd106.chunk.js"
+    "static/js/main.8c8c3866.chunk.js"
   ]
 }
