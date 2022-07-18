@@ -19,25 +19,26 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
     if (!profile) {
         return <Preloader/>
     }
-    ;
+
 
     const onMainPhotoSelected = (e) => {
         if (e.target.files.length) {
             savePhoto(e.target.files[0]);
         }
-    };
+    }
+
 
     const onSubmit = (formData) => {
-        saveProfile(formData)
-        setEditMode(false)
+        saveProfile(formData).then(
+            () => {
+                setEditMode(false);
+            }
+        );
     }
 
     return (
         <div>
-
-
             <div className={s.discriptionBlock}>
-
                 <div className={s.img2}>
                     {<img src={profile.photos.large || userImg} alt=""/>}
                 </div>
@@ -48,11 +49,9 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
 
                 <div>
                     {editMode
-                        ? <ProfileDataForm initialValues={profile} onSubmit={onSubmit}/>
+                        ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit}/>
                         : <ProfileData profile={profile} isOwner={isOwner} goToEditMode={goToEditMode}/>}
-
                 </div>
-
 
                 <div>
                     <b>Status:</b> <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
@@ -65,9 +64,10 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
 
     )
 }
-const Contact = ({contactTitle}, {contactValue}) => {
-    return <div className={s.contact}><span>{contactTitle}</span>: <span>{contactValue}</span></div>
+const Contact = ({contactTitle, contactValue}) => {
+    return <div className={s.contact}>{contactTitle}: {contactValue}</div>
 }
+
 
 const ProfileData = ({profile, isOwner, goToEditMode}) => {
     return (

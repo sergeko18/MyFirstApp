@@ -10,15 +10,18 @@ import s from "../common/FormsControls/FormsControls.module.css"
 
 export const maxLength50 = maxLengthCreator(50);
 
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error, captchaUrl}) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={handleSubmit}>
             {createField("Email", "email", Input, [required, maxLength50 ] )}
             {createField("Password", "password", Input, [required, maxLength50 ], {type: "password"} )}
             {createField(null, "rememberMe", Input, [], {type: "checkbox"}, )}
-            {props.error && <div className={s.formSummaryError}>
-                <span className={s.formSummaryErrorText}>
-                    {props.error}
+
+            {captchaUrl && <img src={captchaUrl} />}
+            {captchaUrl &&  createField("Symbols from image", "captcha", Input, [required], {}) }
+            {error && <div className={s.formSummaryError}>
+                <span>
+                    {error}
                 </span>
             </div>}
             <div>
@@ -36,7 +39,7 @@ const LoginReduxForm = reduxForm({ // <----- THIS IS THE IMPORTANT PART!
 
 const Login = (props) => {
     const onSubmit = (formData) => {
-            props.login(formData.email, formData.password, formData.rememberMe);
+            props.login(formData.email, formData.password, formData.rememberMe, formData.captcha);
     }
     if (props.isAuth) {
         return <Redirect to={"/profile"} />
@@ -45,13 +48,14 @@ const Login = (props) => {
     return (
         <div>
             <h1>Login</h1>
-            <LoginReduxForm onSubmit={onSubmit}/>
+            <LoginReduxForm captchaUrl={props.captchaUrl} onSubmit={onSubmit}/>
         </div>
     )
 }
 
 const mapStateToProps = (state) => ({
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    captchaUrl: state.auth.captchaUrl
 
 })
 

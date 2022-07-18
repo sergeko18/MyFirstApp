@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import s from './ProfileInfo.module.css';
+import s from './ProfileInfo.module.css'
+
 import Preloader from '../../common/Preloader/Preloader';
 import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
 import userImg from "../../../assets/images/user.png"
@@ -7,6 +8,8 @@ import {Field, reduxForm} from "redux-form";
 import {createField, Input, Textarea} from "../../common/FormsControls/FormsControls";
 import {required} from "../../../utils/validators/validators";
 import {maxLength50} from "../../Login/Login";
+import {Contact} from "./ProfileInfo";
+import style from "../../common/FormsControls/FormsControls.module.css"
 
 
 const ProfileDataForm = (props) => {
@@ -26,8 +29,24 @@ const ProfileDataForm = (props) => {
             <div>
                 About me: {createField("Tell about yourself", "aboutMe", Textarea, [])}
             </div>
+            <div>
+                <b>Contacts:</b> {Object.keys(props.profile.contacts).map(key => {
+                return <div key={key} className={s.contacts}>
+                    <span>{key}:</span>
+                    {createField(key, "contacts."+key , Input, )}
+                </div>
+            })}
+            </div>
+
+            {props.error && <div className={style.formSummaryError}>
+                <span>
+                    {props.error}
+                </span>
+            </div>}
+
             <dvi>
                 <button>Save</button>
+
             </dvi>
 
 
